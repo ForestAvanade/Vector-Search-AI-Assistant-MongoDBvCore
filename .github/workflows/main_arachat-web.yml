@@ -25,6 +25,9 @@ jobs:
           dotnet-version: '7.x'
           include-prerelease: true
 
+      - name: Update dependencies
+        run: dotnet add SharedLib/SharedLib.csproj package Azure.AI.OpenAI --version 1.0.0-beta.9
+
       - name: Build with dotnet
         run: dotnet build --configuration Release
 
